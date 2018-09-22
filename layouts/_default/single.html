@@ -1,6 +1,11 @@
 {{ partial "top.html" . }}
 <h1>{{ .Title }}</h1>
 <h4>{{ ( index $.Site.Data.translations (default $.Site.Params.locale "en-US") ).datepublished }} {{ dateFormat "2006-01-02 15:04:05" .Date }}</h4>
+<h4>Tags {{ with .Params.tags }}
+    {{ range . }}
+    <span> <a href="/til/tags/{{ . | urlize }}">{{ . }}</a> </span>
+    {{ end }}
+    {{ end }}</h4>
 {{ partial "share.html" . }}
 <article>
     {{ .Content }}
