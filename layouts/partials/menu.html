@@ -14,7 +14,7 @@
         <h3 data-open="tags">{{ ( index $.Site.Data.translations (default $.Site.Params.locale "en-US") ).tags }}</h3>
         <ul class="tags">
             {{ range $name, $taxonomy := . }}
-            <li><a href="/tags/{{ $name | urlize }}">{{ $name }}</a></li>
+            <li><a href="/til/tags/{{ $name | urlize }}">{{ $name }}</a></li>
             {{ end }}
         </ul>
     </div>
